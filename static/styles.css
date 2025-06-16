@@ -1,0 +1,320 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      padding: 25px 0;
+      text-align: center;
+      letter-spacing: 1px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Insert Link Section */
+    .insert-section {
+      padding: 60px 0;
+    }
+
+    .insert-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .insert-title {
+      color: white;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .insert-form {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 15px 20px;
+      gap: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .insert-form:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .search-icon {
+      width: 24px;
+      height: 24px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E") no-repeat center;
+      opacity: 0.8;
+    }
+
+    .insert-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      width: 100%;
+      font-weight: 400;
+    }
+
+    .insert-input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+      font-style: italic;
+    }
+
+    .analyze-btn {
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .analyze-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+    }
+
+    /* Video Display */
+    .vid-display {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 2px dashed rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .vid-display:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Results Section */
+    .results-section {
+      padding: 80px 0;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .analysis-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .analysis-content {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .results-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .results-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .percentage-circle {
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .percentage-circle::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .percentage-text {
+      color: white;
+      font-size: 32px;
+      font-weight: 700;
+      z-index: 1;
+    }
+
+    .confidence-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .analysis-details {
+      color: white;
+    }
+
+    .analysis-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .analysis-table td {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      vertical-align: top;
+    }
+
+    .analysis-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .analysis-table td:first-child {
+      font-weight: 600;
+      width: 200px;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .analysis-table td:last-child {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .analysis-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .insert-form {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .analyze-btn {
+        width: 100%;
+      }
+
+      .percentage-circle {
+        width: 150px;
+        height: 150px;
+      }
+
+      .percentage-text {
+        font-size: 28px;
+      }
+
+      .analysis-table td:first-child {
+        width: auto;
+      }
+    }
+
+    /* Animation */
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating particles background */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-20px);
+        opacity: 0.8;
+      }
+    }
